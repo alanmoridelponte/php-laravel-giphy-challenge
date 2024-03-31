@@ -16,6 +16,7 @@ class AuthTest extends TestCase {
         Artisan::call('passport:install');
     }
 
+    /** @test */
     public function a_user_can_register() {
         $response = $this->postJson('/api/register', [
             'name' => 'Test User',
@@ -23,8 +24,8 @@ class AuthTest extends TestCase {
             'password' => 'password123',
         ]);
 
-        $response->assertStatus(201)
-            ->assertJson(['message' => 'User registered successfully']);
+        $response->assertStatus(200)
+            ->assertJsonStructure(['token']);
 
         $this->assertDatabaseHas('users', [
             'name' => 'Test User',

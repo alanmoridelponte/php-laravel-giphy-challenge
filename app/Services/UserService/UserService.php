@@ -30,7 +30,7 @@ class UserService implements UserServiceInterface {
      */
     public function create(RegisterUserDTO $userDTO): User {
         try {
-            $this->findByEmail($userDTO->getEmail());
+            $this->findByEmail($userDTO->email);
             throw new LogicException('User with this email already exists!');
         } catch (ModelNotFoundException $e) {
             //

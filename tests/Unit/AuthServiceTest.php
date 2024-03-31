@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Unit;
 
 use App\DTO\User\LoginUserDTO;
 use App\Models\User;
@@ -23,6 +23,7 @@ class AuthServiceTest extends TestCase {
         Artisan::call('passport:install');
     }
 
+    /** @test */
     public function it_can_attempt_login() {
 
         $user = User::factory()->create([

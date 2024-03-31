@@ -16,9 +16,9 @@ class UserRepository implements UserRepositoryInterface {
     public function create(RegisterUserDTO $userDTO): User {
         return $this->user->newQuery()
             ->create([
-                'name' => $userDTO->getName(),
-                'email' => $userDTO->getEmail(),
-                'password' => Hash::make($userDTO->getPassword()),
+                'name' => $userDTO->name,
+                'email' => $userDTO->email,
+                'password' => Hash::make($userDTO->password),
             ]);
     }
 
