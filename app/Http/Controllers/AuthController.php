@@ -1,9 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Contracts\Services\AuthService\AuthServiceInterface;
 use App\Http\Requests\AuthLoginRequest;
 use App\Http\Requests\AuthRegisterRequest;
-use App\Services\AuthService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -11,14 +11,13 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller {
 
     public function __construct(
-        protected AuthService $authService
+        protected AuthServiceInterface $authService
     ) {
         //
     }
 
     public function register(AuthRegisterRequest $request): JsonResponse {
-        $credentials = $request->validated();
-        $newUser = $this->authService->register($credentials);
+        $newUser = $this->authService->register($request->validated());
         $token = $this->authService->generateAccessToken($newUser);
 
         return new JsonResponse(
