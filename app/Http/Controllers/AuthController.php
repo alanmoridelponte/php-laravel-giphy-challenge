@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller {
 
-    protected $authService;
-
-    public function __construct(AuthService $authService) {
-        $this->authService = $authService;
+    public function __construct(
+        protected AuthService $authService
+    ) {
+        //
     }
 
     public function register(AuthRegisterRequest $request): JsonResponse {
