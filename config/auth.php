@@ -116,4 +116,9 @@ return [
 
     'password_timeout' => 10800,
 
+    'api' => [
+        'token' => [
+            'expire' => env('API_TOKEN_EXPIRE_MINUTES', 30),
+        ],
+    ],
 ];
