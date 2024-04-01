@@ -1,8 +1,8 @@
 <?php
 
-namespace App\DTO\User;
+namespace App\DTOs\User;
 
-use App\DTO\BaseDTO;
+use App\DTOs\BaseDTO;
 
 class LoginUserDTO extends BaseDTO {
     public string $email;

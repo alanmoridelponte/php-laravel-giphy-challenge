@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Services\UserService;
 
-use App\DTO\User\RegisterUserDTO;
+use App\DTOs\User\RegisterUserDTO;
 use App\Models\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use LogicException;

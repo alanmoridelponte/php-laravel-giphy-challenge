@@ -3,8 +3,8 @@ namespace App\Services\AuthService;
 
 use App\Contracts\Services\AuthService\AuthServiceInterface;
 use App\Contracts\Services\UserService\UserServiceInterface;
-use App\DTO\User\LoginUserDTO;
-use App\DTO\User\RegisterUserDTO;
+use App\DTOs\User\LoginUserDTO;
+use App\DTOs\User\RegisterUserDTO;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 

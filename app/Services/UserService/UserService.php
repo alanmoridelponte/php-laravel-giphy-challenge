@@ -4,7 +4,7 @@ namespace App\Services\UserService;
 
 use App\Contracts\Repositories\UserRepository\UserRepositoryInterface;
 use App\Contracts\Services\UserService\UserServiceInterface;
-use App\DTO\User\RegisterUserDTO;
+use App\DTOs\User\RegisterUserDTO;
 use App\Models\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use LogicException;

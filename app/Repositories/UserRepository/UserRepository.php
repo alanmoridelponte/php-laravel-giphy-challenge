@@ -3,7 +3,7 @@
 namespace App\Repositories\UserRepository;
 
 use App\Contracts\Repositories\UserRepository\UserRepositoryInterface;
-use App\DTO\User\RegisterUserDTO;
+use App\DTOs\User\RegisterUserDTO;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 

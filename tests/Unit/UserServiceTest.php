@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\DTO\User\RegisterUserDTO;
+use App\DTOs\User\RegisterUserDTO;
 use App\Models\User;
 use App\Services\UserService\UserService;
 use Illuminate\Foundation\Testing\RefreshDatabase;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\DTO\User\LoginUserDTO;
+use App\DTOs\User\LoginUserDTO;
 use App\Traits\Requests\FormRequest\FormRequestValidateWithDto;
 use Illuminate\Foundation\Http\FormRequest;
 

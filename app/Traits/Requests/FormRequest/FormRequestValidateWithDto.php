@@ -2,7 +2,7 @@
 
 namespace App\Traits\Requests\FormRequest;
 
-use App\DTO\BaseDTO;
+use App\DTOs\BaseDTO;
 
 trait FormRequestValidateWithDto {
     public function validated($key = null, $default = null): BaseDTO {
