@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class UserRepository implements UserRepositoryInterface {
 
-    public function __construct(private readonly User $user) {
+    public function __construct(
+        private readonly User $user
+    ) {
         //
     }
 
