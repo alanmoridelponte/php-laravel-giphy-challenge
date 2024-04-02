@@ -5,6 +5,7 @@ namespace App\Services\GiphyService;
 use App\Contracts\Repositories\GiphyRepository\GiphyRepositoryInterface;
 use App\Contracts\Repositories\UserRepository\UserRepositoryInterface;
 use App\Contracts\Services\GiphyService\GiphyServiceInterface;
+use App\DTOs\Giphy\Gif\GetDTO;
 use App\DTOs\Giphy\Gif\SearchDTO;
 
 class GiphyService implements GiphyServiceInterface {
@@ -17,12 +18,12 @@ class GiphyService implements GiphyServiceInterface {
     }
 
     /**
-     * @param string $id
+     * @param GetDTO $get
      * @return array
      * @throws RuntimeException
      */
-    public function getGifById(string $id): array {
-        return $this->giphyRepository->getGifById($id);
+    public function getGifById(GetDTO $get): array {
+        return $this->giphyRepository->getGifById($get->id);
     }
 
     /**
@@ -33,8 +34,8 @@ class GiphyService implements GiphyServiceInterface {
     public function searchGifs(SearchDTO $search): array {
         return $this->giphyRepository->searchGifs(
             $search->query,
-            $search->limit,
-            $search->offset
+            $search->limit ?? null,
+            $search->offset ?? null
         );
     }
 

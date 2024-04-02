@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider {
     public function register(): void {
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(GiphyRepositoryInterface::class, function () {
-            return new GiphyRepository(Http::withUrlParameters([
+            return new GiphyRepository(Http::withOptions([
                 'base_uri' => Config::get('giphy.api.base_url'),
                 'query' => [
                     'api_key' => Config::get('giphy.api.key'),

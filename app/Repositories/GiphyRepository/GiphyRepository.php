@@ -9,7 +9,7 @@ use RuntimeException;
 
 class GiphyRepository implements GiphyRepositoryInterface {
 
-    const GET_BY_ID_GIF_ENDPOINT = "gifs/";
+    const GET_BY_ID_GIF_ENDPOINT = "gifs";
     const SEARCH_GIF_ENDPOINT = "gifs/search";
 
     public function __construct(
@@ -20,7 +20,7 @@ class GiphyRepository implements GiphyRepositoryInterface {
 
     public function getGifById(string $id): array {
         try {
-            $response = $this->client->get(self::GET_BY_ID_GIF_ENDPOINT . $id);
+            $response = $this->client->get(self::GET_BY_ID_GIF_ENDPOINT . "/{$id}");
 
             return $response->json();
         } catch (RequestException $e) {
