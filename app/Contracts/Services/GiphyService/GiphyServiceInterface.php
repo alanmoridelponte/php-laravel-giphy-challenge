@@ -20,6 +20,4 @@ interface GiphyServiceInterface {
      * @throws RuntimeException
      */
     public function searchGifs(SearchDTO $search): array;
-
-    public function saveUserFavoriteGif(): void;
 }

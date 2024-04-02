@@ -3,14 +3,18 @@
 namespace App\Providers;
 
 use App\Contracts\Repositories\GiphyRepository\GiphyRepositoryInterface;
+use App\Contracts\Repositories\UserFavoriteGiphyGifRepository\UserFavoriteGiphyGifRepositoryInterface;
 use App\Contracts\Repositories\UserRepository\UserRepositoryInterface;
 use App\Contracts\Services\AuthService\AuthServiceInterface;
 use App\Contracts\Services\GiphyService\GiphyServiceInterface;
+use App\Contracts\Services\UserFavoriteGiphyGifServiceInterface\UserFavoriteGiphyGifServiceInterface;
 use App\Contracts\Services\UserService\UserServiceInterface;
 use App\Repositories\GiphyRepository\GiphyRepository;
+use App\Repositories\UserFavoriteGiphyGifRepository\UserFavoriteGiphyGifRepository;
 use App\Repositories\UserRepository\UserRepository;
 use App\Services\AuthService\AuthService;
 use App\Services\GiphyService\GiphyService;
+use App\Services\UserFavoriteGiphyGifService\UserFavoriteGiphyGifService;
 use App\Services\UserService\UserService;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
@@ -19,6 +23,7 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider {
     public function register(): void {
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+        $this->app->bind(UserFavoriteGiphyGifRepositoryInterface::class, UserFavoriteGiphyGifRepository::class);
         $this->app->bind(GiphyRepositoryInterface::class, function () {
             return new GiphyRepository(Http::withOptions([
                 'base_uri' => Config::get('giphy.api.base_url'),
@@ -28,6 +33,7 @@ class AppServiceProvider extends ServiceProvider {
             ]));
         });
         $this->app->bind(UserServiceInterface::class, UserService::class);
+        $this->app->bind(UserFavoriteGiphyGifServiceInterface::class, UserFavoriteGiphyGifService::class);
         $this->app->bind(AuthServiceInterface::class, AuthService::class);
         $this->app->bind(GiphyServiceInterface::class, GiphyService::class);
     }

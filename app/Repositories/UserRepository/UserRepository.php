@@ -29,4 +29,10 @@ class UserRepository implements UserRepositoryInterface {
             ->where('email', '=', $email)
             ->firstOrFail();
     }
+
+    public function findById(int $id): User {
+        return $this->user->newQuery()
+            ->where('id', '=', $id)
+            ->firstOrFail();
+    }
 }

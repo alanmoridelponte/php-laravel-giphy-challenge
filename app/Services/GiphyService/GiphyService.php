@@ -3,7 +3,6 @@
 namespace App\Services\GiphyService;
 
 use App\Contracts\Repositories\GiphyRepository\GiphyRepositoryInterface;
-use App\Contracts\Repositories\UserRepository\UserRepositoryInterface;
 use App\Contracts\Services\GiphyService\GiphyServiceInterface;
 use App\DTOs\Giphy\Gif\GetDTO;
 use App\DTOs\Giphy\Gif\SearchDTO;
@@ -11,8 +10,7 @@ use App\DTOs\Giphy\Gif\SearchDTO;
 class GiphyService implements GiphyServiceInterface {
 
     public function __construct(
-        protected readonly GiphyRepositoryInterface $giphyRepository,
-        protected readonly UserRepositoryInterface $userRepository
+        protected readonly GiphyRepositoryInterface $giphyRepository
     ) {
         //
     }
@@ -38,9 +36,4 @@ class GiphyService implements GiphyServiceInterface {
             $search->offset ?? null
         );
     }
-
-    public function saveUserFavoriteGif(): void {
-        //
-    }
-
 }

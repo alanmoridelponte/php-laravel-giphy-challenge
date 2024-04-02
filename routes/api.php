@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GiphyController;
+use App\Http\Controllers\UserFavoriteGiphyGifController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +22,6 @@ Route::middleware('auth:api')->prefix('giphy')->group(function () {
     Route::prefix('gifs')->group(function () {
         Route::get('search', [GiphyController::class, 'searchGifs']);
         Route::get('{id}', [GiphyController::class, 'getGifById']);
+        Route::post('favorite', [UserFavoriteGiphyGifController::class, 'saveUserFavoriteGif']);
     });
 });
