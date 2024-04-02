@@ -15,6 +15,9 @@ class GiphyController extends Controller {
         //
     }
 
+    /**
+     * @useService App\Services\GiphyService\GiphyService
+     */
     public function searchGifs(GiphySearchRequest $request): JsonResponse {
         $data = $this->giphyService->searchGifs($request->validated());
 
@@ -24,6 +27,9 @@ class GiphyController extends Controller {
         );
     }
 
+    /**
+     * @useService App\Services\GiphyService\GiphyService
+     */
     public function getGifById(GiphyGetRequest $request): JsonResponse {
         $data = $this->giphyService->getGifById($request->validated());
 

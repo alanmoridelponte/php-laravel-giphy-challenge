@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 
-Route::middleware('auth:api')->prefix('giphy')->group(function () {
+Route::middleware(['auth:api', 'api.logger'])->prefix('giphy')->group(function () {
     Route::prefix('gifs')->group(function () {
         Route::get('search', [GiphyController::class, 'searchGifs']);
         Route::get('{id}', [GiphyController::class, 'getGifById']);

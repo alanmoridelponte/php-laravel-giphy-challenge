@@ -16,6 +16,9 @@ class UserFavoriteGiphyGifController extends Controller {
         //
     }
 
+    /**
+     * @useService App\Services\UserFavoriteGiphyGifService\UserFavoriteGiphyGifService
+     */
     public function saveUserFavoriteGif(UserFavoriteGiphyGifSaveRequest $request): JsonResponse {
         try {
             $this->userFavoriteGiphyGifService->saveUserFavoriteGif($request->validated());
