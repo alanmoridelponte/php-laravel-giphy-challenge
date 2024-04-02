@@ -3,23 +3,22 @@
 namespace App\Contracts\Services\GiphyService;
 
 use App\DTOs\Giphy\Gif\SearchDTO;
-use App\Models\User;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use LogicException;
 
 interface GiphyServiceInterface {
 
     /**
      * @param string $id
-     * @return User
-     * @throws ModelNotFoundException
+     * @return array
+     * @throws RuntimeException
      */
     public function getGifById(string $id): array;
 
     /**
-     * @throws LogicException
+     * @param SearchDTO $search
+     * @return array
+     * @throws RuntimeException
      */
-    public function searchGifs(SearchDTO $searchDTO): array;
+    public function searchGifs(SearchDTO $search): array;
 
     public function saveUserFavoriteGif(): void;
 }

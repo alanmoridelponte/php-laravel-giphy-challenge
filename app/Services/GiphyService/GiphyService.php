@@ -6,7 +6,6 @@ use App\Contracts\Repositories\GiphyRepository\GiphyRepositoryInterface;
 use App\Contracts\Repositories\UserRepository\UserRepositoryInterface;
 use App\Contracts\Services\GiphyService\GiphyServiceInterface;
 use App\DTOs\Giphy\Gif\SearchDTO;
-use LogicException;
 
 class GiphyService implements GiphyServiceInterface {
 
@@ -17,12 +16,19 @@ class GiphyService implements GiphyServiceInterface {
         //
     }
 
+    /**
+     * @param string $id
+     * @return array
+     * @throws RuntimeException
+     */
     public function getGifById(string $id): array {
         return $this->giphyRepository->getGifById($id);
     }
 
     /**
-     * @throws LogicException
+     * @param SearchDTO $search
+     * @return array
+     * @throws RuntimeException
      */
     public function searchGifs(SearchDTO $search): array {
         return $this->giphyRepository->searchGifs(
