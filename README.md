@@ -82,7 +82,7 @@ Para probar los feature test ejecutar el siguiente comando
 
 ## Diagramas
 
-Los diagramas de Casos de Uso, Secuencia, y DER, se encuentran en `docs/diagrams/diagramas.docx`
+Los diagramas de Casos de Uso, Secuencia, y DER, se encuentran en `./docs/diagrams`
 
 ## Datos para conectarse a la DB desde un gestor de DBs
 
