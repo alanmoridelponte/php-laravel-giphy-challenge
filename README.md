@@ -63,7 +63,7 @@ Este contenedor utilizara PHP 8.2 y Composer para instalar la librerías
 ```
 ## Log de acceso a la api
 
-En `storage/logs/api_access.log` listaremos los accesso a la plataforma, ejemplo:
+En `storage/logs/api_access.log` listaremos los accesos a la api, ejemplo:
 ```bash
 [2024-04-03 02:51:44] local.INFO: Received HTTP request {"user_id":1,"services_invoked":["App\\Services\\UserFavoriteGiphyGifService\\UserFavoriteGiphyGifService"],"request_method":"POST","request_body":{"gif_id":"cfuL5gqFDreXxkWQ4o","alias":"gatito","user_id":1},"response_http_code":200,"response_body":{"ArrayObject":[]},"timestamp":"2024-04-03 02:51:44","ip":"172.24.0.1"} 
 ```
