@@ -17,7 +17,7 @@
 1. Clonar repositorio
 
 ```bash
-git clone https://github.com/EmanuelCruz/challenge-php-prex.git
+git clone https://github.com/alanmoridelponte/php-laravel-giphy-challenge.git
 ```
 
 2. Generar archivo .env
